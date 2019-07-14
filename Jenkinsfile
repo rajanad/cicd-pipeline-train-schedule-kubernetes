@@ -35,7 +35,7 @@ pipeline {
             steps {
                 input 'Do you want to deply to kubernetes cluster?'
                 milestone(1)
-                kubernetesDeploy (
+                kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
                     configs: 'train-schedule-kube.yml',
                     enableConfigSubstitution: true
