@@ -32,6 +32,9 @@ pipeline {
             }
         }
         stage('DeployToKubernetes') {
+            when {
+                branch 'master'
+            }
             steps {
                 input 'Do you want to deply to kubernetes cluster?'
                 milestone(1)
