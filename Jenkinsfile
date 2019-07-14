@@ -31,12 +31,12 @@ pipeline {
                 }
             }
         }
-        stage('DeployToKubernetes') {
+        stage('DeployToProduction') {
             when {
                 branch 'master'
             }
             steps {
-                input 'Do you want to deply to kubernetes cluster?'
+                input 'Deploy to Production?'
                 milestone(1)
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
